@@ -41,9 +41,9 @@ Quick Compile Howto (Linux):
 
 Notes:
 
-	* Each UDP packet contains 7*188=1316 bytes ( 7 TS packets)
-	* channels.conf: only frontend paramters are needed. PIDs are
-	  extracted from the PAT/PMT on demand.
+* Each UDP packet contains 7*188=1316 bytes ( 7 TS packets)
+* channels.conf: only frontend paramters are needed. PIDs are
+  extracted from the PAT/PMT on demand.
 <!--
 	* Windows: MS Loopback Adapter Driver has to be installed if you only
 	  want to stream local multicasts.
@@ -61,15 +61,15 @@ Notes:
 
 Known Issues:
 
-	* Linux: netcv2dvbip make use of the multicast routing API to be
-	  able to receive all IGMP (v1,v2) messages on the subnet without joining
-	  all groups. If you have configured 200 channels, then at least
-	  those 200 groups would have to be joined to receive the group
-	  specific queries. IGMPv3 does not suffer this "problem", since
-	  all reports are sent to the group 224.0.0.22.
-	  So, if you are already using software that make use of this API,
-	  netcv2dvbip will fail to start, because only one program can make
-	  use of this API.
+* Linux: netcv2dvbip make use of the multicast routing API to be
+  able to receive all IGMP (v1,v2) messages on the subnet without joining
+  all groups. If you have configured 200 channels, then at least
+  those 200 groups would have to be joined to receive the group
+  specific queries. IGMPv3 does not suffer this "problem", since
+  all reports are sent to the group 224.0.0.22.
+  So, if you are already using software that make use of this API,
+  netcv2dvbip will fail to start, because only one program can make
+  use of this API.
 <!--
 	* Windows XP does not support MLDv2 messages, so the built-in MLD-Reporter of
 	  libmcli is used in the Windows version of netcv2dvbip.
@@ -84,11 +84,11 @@ Known Issues:
 
 Possible clients:
 
-	* VLC [Linux, Windows]
-	* vdr-iptv-plugin [Linux]
-	* DVBLink for IPTV (http://www.dvblogic.com/) [Windows]
-	* Mediaportal with IPTV source filter (with EPG) [Windows]
-	* [...]
+* VLC [Linux, Windows]
+* vdr-iptv-plugin [Linux]
+* DVBLink for IPTV (http://www.dvblogic.com/) [Windows]
+* Mediaportal with IPTV source filter (with EPG) [Windows]
+* [...]
 
 ------------------------------------------------------------
 
