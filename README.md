@@ -26,19 +26,15 @@ Baycom GmbH <info@baycom.de>
 
 Quick Compile Howto (Linux):
 
-1)
-Compile and install libnetceiver https://github.com/vdr-projects/libnetceiver
+1) Compile and install libnetceiver https://github.com/vdr-projects/libnetceiver
 
-2)
-Checkout netcv2dvbip
-git clone https://github.com/vdr-projects/netcv2dvbip.git
+2) Checkout netcv2dvbip
+   git clone https://github.com/vdr-projects/netcv2dvbip.git
 
-3)
-cd netcv2dvbip
-make
+3) cd netcv2dvbip
+   make
 
-5)
-./netcv2dvbip
+5) ./netcv2dvbip
 
 ------------------------------------------------------------
 
