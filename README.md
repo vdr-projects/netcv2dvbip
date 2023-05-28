@@ -112,10 +112,12 @@ Command line Options:
 
 ChangeLog:
 ==========
-  2009-??-?? version 1.0.0
+
+```
+2009-??-?? version 1.0.0
            - initial release
 
-  2010-06-03 version 1.1.0
+2010-06-03 version 1.1.0
            - bugfixes:     * number of channels > 255 is now handled correctly
                            * PMT PIDs > 255 had a wrong entry in the PAT
            - new features: * DVB-C and DVB-T support
@@ -124,9 +126,10 @@ ChangeLog:
                            * playlist file generation (M3U)
                            * EPG support: new command line option "-e" activates
                              sending of EIT packets (PID 0x12) in the stream.
-  2010-06-17 version 1.1.1   * bugfix: port number was not set correctly in M3U file
+2010-06-17 version 1.1.1   * bugfix: port number was not set correctly in M3U file
                            * bugfix: high CPU load (select() timeout was not
                                      set correctly)
                            * changed: streams now also use non-blocking sockets
                            * Windows only: activate built-in MLDv2 reporter only for
                                            Windows XP
+```
