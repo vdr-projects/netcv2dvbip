@@ -23,39 +23,24 @@ XML_INC:=`xml2-config --cflags`
 XML_LIB:=`xml2-config --libs`
 endif
 
-INCLUDES:=$(INCLUDES) -I../client -I../common $(XML_INC)
-DEFS:=$(DEFS) -g -DCLIENT 
-LDADD:=$(LDADD) -L../client
-STATICLIBS:=$(LIBS) ../client/libmcli.a $(XML_LIB) -lpthread -lz
-LIBS:=$(LIBS) $(XML_LIB) -lpthread -lmcli
+NETCV_INC:=`pkg-config --cflags libnetceiver`
+NETCV_LIB:=`pkg-config --libs libnetceiver`
+
+INCLUDES:=$(INCLUDES) $(XML_INC) $(NETCV_INC)
+DEFS:=$(DEFS) -g -DCLIENT
+LDADD:=$(LDADD)
+LIBS:=$(LIBS) $(XML_LIB) -lpthread $(NETCV_LIB)
 LDFLAGS:=$(LDFLAGS) -Wl,--as-needed
 
 netcv2dvbip_OBJECTS=main.o parse.o mclilink.o siparser.o crc32.o clist.o stream.o thread.o misc.o streamer.o igmp.o iface.o
 
-all: netcv2dvbip netcv2dvbip-static
+all: netcv2dvbip
 
-MAKEDEP = $(CC) -MM -MG
-DEPFILE = .dependencies
-$(DEPFILE): makefile
-	$(MAKEDEP) $(INCLUDES) $(netcv2dvbip_OBJECTS:%.o=%.c) > $@
-
--include $(DEPFILE)
-
-netcv2dvbip: $(netcv2dvbip_OBJECTS) ../client/libmcli.so
+netcv2dvbip: $(netcv2dvbip_OBJECTS)
 	$(CC) $(LDFLAGS) $(netcv2dvbip_OBJECTS) $(LDADD) $(LIBS) -o $@
-
-netcv2dvbip-static: $(netcv2dvbip_OBJECTS) ../client/libmcli.a
-	$(CC) $(LDFLAGS) $(netcv2dvbip_OBJECTS) $(LDADD) $(STATICLIBS) -o $@
-
-../client/libmcli.so: ../client/libmcli.a
-
-../client/libmcli.a:
-	make -C ../client
 
 .c.o:
 	$(CC) $(DEFS) $(INCLUDES)  $(CFLAGS) -c $<
 
-
 clean:
 	$(RM) -f $(DEPFILE) *.o *~ netcv2dvbip netcv2dvbip-static
-	

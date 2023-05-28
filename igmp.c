@@ -1,4 +1,4 @@
-#include "defs.h"
+#include "netcv/defs.h"
 
 #ifdef WIN32
 #define WIN32_LEAN_AND_MEAN

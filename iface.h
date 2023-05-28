@@ -1,7 +1,7 @@
 #ifndef __IFACE_H
 #define __IFACE_H
 
-#include "defs.h"
+#include "netcv/defs.h"
 
 #include "misc.h"
 

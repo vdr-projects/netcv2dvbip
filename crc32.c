@@ -24,7 +24,7 @@ $Id: crc32.c,v 1.2 2006/01/02 18:24:04 rasc Exp $
 
 
 
-#include "defs.h"
+#include "netcv/defs.h"
 #include "crc32.h"
 
 
