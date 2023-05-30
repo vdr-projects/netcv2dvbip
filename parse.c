@@ -450,7 +450,7 @@ int ParseLine (const char *s, channel_t * ch)
 					} else
 					    // no need to set ok to 'false'
 					    printf ("ERROR: too many CA ids!"
-						\n");
+						"\n");
 					p = NULL;
 				    }
 				    caids[NumCaIds] = 0;
